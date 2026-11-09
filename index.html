@@ -369,7 +369,31 @@ footer .logo img{height:28px}
 .fab svg{width:26px;height:26px}
 @media (max-width:640px){.fab{width:56px;padding:0;justify-content:center}.fab span{display:none}}
 
+/* hover: cards lift, a sunrise wash follows the cursor, the title warms up */
+.o-card,.step{position:relative;isolation:isolate;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.o-card::after,.step::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:0;transition:opacity .35s;pointer-events:none;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,122,26,.16),transparent 60%),linear-gradient(160deg,rgba(255,164,69,.07),transparent 55%)}
+.o-card h3,.step h3,.story-item h3,.faq summary{transition:color .3s}
+.step::before{transition:background .35s,color .35s,box-shadow .35s,transform .35s}
+.o-bar i{transition:filter .35s}
+.faq summary i{transition:transform .3s}
+@media (hover:hover){
+  .o-card:hover,.step:hover{transform:translateY(-6px);border-color:rgba(255,122,26,.45);box-shadow:0 26px 60px -24px rgba(255,122,26,.45),0 0 0 1px rgba(255,122,26,.08) inset}
+  .o-card:hover::after,.step:hover::after{opacity:1}
+  .o-card:hover h3,.step:hover h3{color:var(--sun-2)}
+  .o-card:hover .o-bar i{filter:brightness(1.2) saturate(1.2)}
+  .step:hover::before{background:var(--sun);color:var(--sun-ink);box-shadow:0 0 0 6px rgba(255,122,26,.18),0 10px 26px -6px rgba(255,122,26,.8);transform:scale(1.06)}
+  .story-item{cursor:default}
+  .story-item:hover{opacity:.75}
+  .story-item.on:hover{opacity:1}
+  .story-item:hover h3{color:var(--sun-2)}
+  .faq summary:hover{color:var(--sun-2)}
+  .faq summary:hover i{transform:rotate(90deg)}
+  .faq summary:hover i::before,.faq summary:hover i::after{background:var(--sun-2)}
+  .opts span:hover{border-color:var(--seal-lt);color:var(--text)}
+}
 @media (prefers-reduced-motion:reduce){
+  .o-card,.step{transition:none}.o-card:hover,.step:hover{transform:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .paper{transform:none}.by,.flip .after,.toast,.newrow{opacity:1;transform:none;max-height:none}.flip .before{opacity:0}
   .o-bar i{transform:none}
@@ -754,6 +778,15 @@ footer .logo img{height:28px}
   document.querySelectorAll('[data-wa]').forEach((a) => a.href = wa("Hello, I'd like to know more about Tankline for my gas plant."));
   document.getElementById('yr').textContent = new Date().getFullYear();
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // cursor-following glow on cards
+  document.querySelectorAll('.o-card,.step').forEach((el) => {
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
 
   /* ---- laptop: scale the 1200x750 app to the screen ---- */
   const view = document.getElementById('view'), app = document.getElementById('app');
