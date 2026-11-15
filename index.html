@@ -114,7 +114,7 @@ section{padding:120px 0}
 .hero{position:relative;padding:84px 0 70px;text-align:center}
 .hero>.wrap{position:relative;z-index:1}
 /* gas plant at sunrise, behind the headline; the laptop stands on its ground */
-.hero-head{position:relative;padding-bottom:330px;margin-bottom:-170px}
+.hero-head{position:relative;padding-bottom:380px;margin-bottom:-170px}
 .hero-head>*:not(.hero-art){position:relative;z-index:1}
 .hero-art{position:absolute;z-index:0;left:50%;translate:-50% 0;width:100vw;top:-84px;bottom:0;overflow:hidden;pointer-events:none;
   -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 30%);mask-image:linear-gradient(180deg,transparent 0,#000 30%)}
@@ -122,12 +122,19 @@ section{padding:120px 0}
 .hero-art::after{content:"";position:absolute;inset:0;
   background:radial-gradient(ellipse 52% 46% at 50% 36%,rgba(12,13,16,.82),rgba(12,13,16,.35) 70%,transparent),
              linear-gradient(90deg,var(--night),transparent 18%,transparent 82%,var(--night))}
-@media (max-width:700px){.hero-head{padding-bottom:230px;margin-bottom:-120px}.hero-art img{width:1100px}}
+@media (max-width:700px){.hero-head{padding-bottom:260px;margin-bottom:-120px}.hero-art img{width:1100px}}
 .hero h1{max-width:13em;margin-inline:auto}
 .hero .lede{margin:24px auto 0}
 .hero .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
-.client{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:30px;color:var(--muted);font-size:15px}
-.client img{width:82px;background:#fff;border-radius:8px;padding:5px 8px}
+/* ---------- trusted by ---------- */
+.trusted{padding:24px 0 0}
+.trusted .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 40px;padding:30px 0;border-block:1px solid var(--line)}
+.trusted p{color:var(--dim);font-size:15px}
+.trusted .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.trusted .co{display:flex;align-items:center;gap:14px}
+.trusted .co img{width:96px;background:#fff;border-radius:10px;padding:6px 10px}
+.trusted .co b{display:block;font-weight:600;font-size:15px;line-height:1.3}
+.trusted .co span{color:var(--muted);font-size:14px}
 
 /* ---------- laptop ---------- */
 .stage{position:relative;z-index:1;margin:72px auto 0;max-width:1000px;padding-bottom:70px}
@@ -439,7 +446,6 @@ footer .logo img{height:28px}
       <a href="#demo" class="btn btn-sun">Request a demo</a>
       <a href="https://tankline-demo-seven.vercel.app/login" class="btn btn-ghost" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Try the live demo</a>
     </div>
-    <div class="client"><img src="img/davinad.png" alt="Davinad" width="82" height="35">In daily use at Davinad Nigeria Gas Limited, Akure.</div>
    </div>
 
     <div class="stage" id="stage">
@@ -573,6 +579,16 @@ footer .logo img{height:28px}
       <div class="moments" role="tablist" aria-label="Choose a moment">
         <button role="tab" class="on" data-go="0">Sell</button><button role="tab" data-go="1">Print</button><button role="tab" data-go="2">Confirm</button><button role="tab" data-go="3">Report</button>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUSTED BY ================= -->
+<section class="trusted" aria-label="Gas plants using Tankline">
+  <div class="wrap">
+    <p>Trusted by gas plants in Nigeria</p>
+    <div class="logos">
+      <div class="co"><img src="img/davinad.png" alt="Davinad" width="96" height="41"><div><b>Davinad Nigeria Gas Limited</b><span>Akure, Ondo State</span></div></div>
     </div>
   </div>
 </section>
