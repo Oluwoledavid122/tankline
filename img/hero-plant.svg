@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" fill="none">
+  <defs>
+    <!-- sunrise behind the tank -->
+    <radialGradient id="sun" cx="800" cy="470" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFA445" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#FF7A1A" stop-opacity=".6"/>
+      <stop offset=".5" stop-color="#FF7A1A" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#FF7A1A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="470" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#121418"/><stop offset="1" stop-color="#0C0D10"/>
+    </linearGradient>
+    <!-- rim light: bright toward the sun, fading outward -->
+    <linearGradient id="rim" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF7A1A" stop-opacity=".15"/>
+      <stop offset=".5" stop-color="#FFA445" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#FF7A1A" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="tankShade" x1="0" y1="300" x2="0" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#23262C"/><stop offset="1" stop-color="#101215"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky glow and sun -->
+  <rect width="1600" height="470" fill="url(#sun)"/>
+  <circle cx="800" cy="470" r="96" fill="#FFB05C" opacity=".9"/>
+  <circle cx="800" cy="470" r="130" fill="#FF8A2E" opacity=".25"/>
+
+  <!-- distant tree line -->
+  <path d="M0 462 Q40 440 80 456 Q120 436 170 452 Q220 430 270 450 Q330 438 380 454 L380 470 L0 470Z
+           M1240 456 Q1290 434 1340 450 Q1390 432 1450 448 Q1510 436 1560 452 Q1585 446 1600 450 L1600 470 L1240 470Z" fill="#14161A"/>
+
+  <!-- ground -->
+  <rect y="468" width="1600" height="92" fill="url(#ground)"/>
+  <path d="M0 468H1600" stroke="url(#rim)" stroke-width="1.5" opacity=".6"/>
+
+  <!-- perimeter fence -->
+  <g stroke="#2A2E35" stroke-width="2">
+    <path d="M0 448H360M1180 448H1600M0 432H360M1180 432H1600"/>
+    <path d="M20 424V470M80 424V470M140 424V470M200 424V470M260 424V470M320 424V470M1200 424V470M1260 424V470M1320 424V470M1380 424V470M1440 424V470M1500 424V470M1560 424V470"/>
+  </g>
+
+  <!-- second storage tank, behind -->
+  <g>
+    <rect x="930" y="318" width="420" height="96" rx="48" fill="#15171B"/>
+    <path d="M978 318H1302" stroke="url(#rim)" stroke-width="2" opacity=".55"/>
+    <path d="M990 414v40M1290 414v40M1140 414v40" stroke="#15171B" stroke-width="18"/>
+  </g>
+
+  <!-- main LPG bullet tank on saddles -->
+  <g>
+    <rect x="430" y="300" width="600" height="138" rx="69" fill="url(#tankShade)"/>
+    <path d="M499 300H961" stroke="url(#rim)" stroke-width="3"/>
+    <path d="M462 330a69 69 0 0 1 37 -30M998 330a69 69 0 0 0 -37 -30" stroke="url(#rim)" stroke-width="2" opacity=".7"/>
+    <!-- band -->
+    <rect x="610" y="356" width="240" height="26" rx="4" fill="#1B1E23" stroke="#2C3036"/>
+    <rect x="626" y="365" width="70" height="8" rx="2" fill="#FF7A1A" opacity=".55"/>
+    <rect x="706" y="365" width="128" height="8" rx="2" fill="#3A3E45"/>
+    <!-- saddles -->
+    <path d="M500 438h80l-12 32h-56zM690 438h80l-12 32h-56zM880 438h80l-12 32h-56z" fill="#1A1C21"/>
+    <!-- top walkway, rails, valves -->
+    <path d="M560 300v-26M600 300v-26M640 300v-26M680 300v-26M720 300v-26M760 300v-26M800 300v-26M840 300v-26M880 300v-26M920 300v-26" stroke="#2C3036" stroke-width="2"/>
+    <path d="M550 274H930" stroke="#3A3E45" stroke-width="3"/>
+    <path d="M550 274H930" stroke="url(#rim)" stroke-width="1.5" opacity=".6"/>
+    <rect x="690" y="284" width="22" height="16" rx="3" fill="#2A2E35"/>
+    <rect x="740" y="280" width="14" height="20" rx="3" fill="#2A2E35"/>
+    <path d="M747 280v-14M741 266h12" stroke="#3A3E45" stroke-width="3"/>
+    <!-- ladder -->
+    <path d="M1010 312v158M1026 312v158M1010 336h16M1010 360h16M1010 384h16M1010 408h16M1010 432h16M1010 456h16" stroke="#2C3036" stroke-width="2.5"/>
+    <!-- level gauge on the end -->
+    <circle cx="470" cy="368" r="17" fill="#1B1E23" stroke="#3A3E45" stroke-width="2"/>
+    <path d="M470 368l9-8" stroke="#FFA445" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- pipework from tank to filling shed -->
+  <g stroke="#2A2E35" stroke-width="7" stroke-linecap="round">
+    <path d="M520 438v18H330"/>
+    <path d="M560 438v8H345" stroke-width="5"/>
+  </g>
+  <rect x="404" y="448" width="14" height="16" rx="2" fill="#3A3E45"/>
+
+  <!-- filling shed: canopy, posts, scale, cylinders -->
+  <g>
+    <path d="M90 322H390L410 346H70Z" fill="#1A1C21"/>
+    <path d="M90 322H390" stroke="url(#rim)" stroke-width="2" opacity=".7"/>
+    <path d="M100 346v124M360 346v124" stroke="#1A1C21" stroke-width="12"/>
+    <rect x="150" y="360" width="160" height="14" rx="3" fill="#232629"/>
+    <rect x="160" y="363" width="40" height="8" rx="2" fill="#FF7A1A" opacity=".5"/>
+    <!-- filling scale -->
+    <rect x="232" y="446" width="72" height="12" rx="2" fill="#2A2E35"/>
+    <rect x="252" y="396" width="34" height="22" rx="3" fill="#20232A" stroke="#3A3E45"/>
+    <rect x="257" y="402" width="24" height="10" rx="1" fill="#FFA445" opacity=".6"/>
+    <path d="M269 418v28" stroke="#2A2E35" stroke-width="4"/>
+    <!-- cylinder on the scale and one waiting -->
+    <g fill="#1F2227">
+      <rect x="244" y="406" width="0" height="0"/>
+      <path d="M134 470v-48a16 16 0 0 1 16-16h20a16 16 0 0 1 16 16v48z"/>
+      <rect x="146" y="396" width="28" height="12" rx="4"/>
+      <path d="M190 470v-40a14 14 0 0 1 14-14h14a14 14 0 0 1 14 14v40z"/>
+      <rect x="199" y="408" width="24" height="10" rx="3"/>
+    </g>
+    <path d="M150 406h20M203 418h16" stroke="url(#rim)" stroke-width="1.5" opacity=".5"/>
+  </g>
+
+  <!-- cylinder stack, right -->
+  <g fill="#1B1D22">
+    <g id="cyl">
+      <path d="M1190 470v-46a15 15 0 0 1 15-15h22a15 15 0 0 1 15 15v46z"/>
+      <rect x="1201" y="398" width="30" height="13" rx="4"/>
+    </g>
+    <use href="#cyl" x="58"/>
+    <use href="#cyl" x="116"/>
+    <use href="#cyl" x="174"/>
+    <use href="#cyl" x="29" y="-72"/>
+    <use href="#cyl" x="87" y="-72"/>
+    <use href="#cyl" x="145" y="-72"/>
+  </g>
+  <path d="M1224 326h18M1282 326h18M1340 326h18" stroke="url(#rim)" stroke-width="1.5" opacity=".5"/>
+  <path d="M1182 398H1426" stroke="#2A2E35" stroke-width="3"/>
+
+  <!-- light mast -->
+  <path d="M1500 470V250" stroke="#1A1C21" stroke-width="6"/>
+  <path d="M1478 250h44" stroke="#2A2E35" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="1488" cy="256" r="3" fill="#FFA445" opacity=".8"/>
+  <circle cx="1512" cy="256" r="3" fill="#FFA445" opacity=".8"/>
+
+  <!-- windsock pole, left -->
+  <path d="M30 470V300" stroke="#1A1C21" stroke-width="4"/>
+  <path d="M32 302l40 6-2 14-38 -4z" fill="#FF7A1A" opacity=".55"/>
+</svg>
